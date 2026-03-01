@@ -943,9 +943,7 @@ p {
     }
     
     .footer-links {
-        flex-direction: column;
-        gap: 0.75rem;
-        width: 100%;
+        display: none;
     }
     
     .nav-links a::after {
@@ -1054,6 +1052,10 @@ p {
     footer .container {
         flex-direction: column;
         gap: 1.5rem;
+    }
+    
+    .footer-links {
+        display: none;
     }
     
     .nav-links a::after {
@@ -1193,6 +1195,10 @@ footer .container {
     footer .container {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .footer-links {
+        display: none;
     }
     
     nav .container {
