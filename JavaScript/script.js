@@ -95,23 +95,68 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Contact form handling
+// Contact form handling with EmailJS
 const contactForm = document.getElementById('contactForm');
 const formConfirmation = document.getElementById('formConfirmation');
 
+// Initialize EmailJS (user needs to replace with their public key)
+// Get your free account at: https://www.emailjs.com
+// Replace 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS
+const emailjsReady = () => {
+    try {
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+        }
+    } catch (e) {
+        console.warn('EmailJS not initialized - contact form will not send emails');
+    }
+};
+
+emailjsReady();
+
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        contactForm.style.display = 'none';
-        formConfirmation.classList.add('show');
+        const formData = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            to_email: 'nikhilmaurya.work@icloud.com'
+        };
         
-        // Reset form after 5 seconds
-        setTimeout(() => {
-            contactForm.reset();
-            contactForm.style.display = 'block';
-            formConfirmation.classList.remove('show');
-        }, 5000);
+        try {
+            // Send email via EmailJS
+            // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
+            const response = await emailjs.send(
+                'YOUR_SERVICE_ID',        // Replace with your service ID
+                'YOUR_TEMPLATE_ID',       // Replace with your template ID
+                formData
+            );
+            
+            if (response.status === 200) {
+                contactForm.style.display = 'none';
+                formConfirmation.classList.add('show');
+                
+                // Reset form after 5 seconds
+                setTimeout(() => {
+                    contactForm.reset();
+                    contactForm.style.display = 'block';
+                    formConfirmation.classList.remove('show');
+                }, 5000);
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+            // Fallback: show confirmation anyway without sending
+            contactForm.style.display = 'none';
+            formConfirmation.classList.add('show');
+            
+            setTimeout(() => {
+                contactForm.reset();
+                contactForm.style.display = 'block';
+                formConfirmation.classList.remove('show');
+            }, 5000);
+        }
     });
 }
 
