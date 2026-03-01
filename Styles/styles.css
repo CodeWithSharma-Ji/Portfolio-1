@@ -912,13 +912,11 @@ p {
     .theme-toggle {
         font-size: 1rem;
         padding: 0.3rem;
-        order: 2;
     }
     
     .hamburger {
         display: flex;
-        margin-left: 0;
-        order: 3;
+        margin-left: auto;
     }
     
     .nav-links {
@@ -1085,8 +1083,7 @@ p {
     
     .hamburger {
         display: flex;
-        margin-left: 0;
-        order: 3;
+        margin-left: auto;
     }
     
     .nav-links {
@@ -1288,8 +1285,7 @@ footer .container {
     
     .hamburger {
         display: flex;
-        margin-left: 0;
-        order: 3;
+        margin-left: auto;
     }
     
     .page {
