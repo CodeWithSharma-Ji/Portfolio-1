@@ -50,10 +50,10 @@ if (themeToggle) {
         
         if (document.body.classList.contains('light-mode')) {
             localStorage.setItem('theme', 'light-mode');
-            themeIcon.textContent = '◐';
+            if (themeIcon) themeIcon.textContent = '◐';
         } else {
             localStorage.setItem('theme', 'dark-mode');
-            themeIcon.textContent = '☀';
+            if (themeIcon) themeIcon.textContent = '☀';
         }
     });
 }
