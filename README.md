@@ -1,6 +1,6 @@
 # NTgGamer1 – Personal Portfolio 🚀
 
-Welcome to my personal portfolio repository! This project showcases my identity as **NTgGamer1** — blending gaming creativity with real-world software development.
+Welcome to my personal portfolio repository! Which is completely made with AI Tools And a little bit of my hardwork. This project showcases my identity as **NTgGamer1** — blending gaming creativity with real-world software development.
 
 🔗 **Live Site:** https://ntg-portfolio.vercel.app  
 📂 **Repo:** https://github.com/NTgGamer1/Portfolio
@@ -263,12 +263,8 @@ Built with pure HTML, CSS, and JavaScript—no frameworks!
 
 ## 🧩 Roadmap / Future Enhancements
 
-- [ ] Project cards with filters (Web / AI / Tools)
 - [ ] Blog/Notes section for learning logs
-- [ ] Dark/Light mode toggle
 - [ ] Resume download button
-- [ ] Contact form with EmailJS
-- [ ] Performance optimization (Lighthouse 90+)
 
 ---
 
